@@ -1,6 +1,6 @@
 package nl.hu.testendpoint.domain;
 
-public class Component {
+public abstract class Component {
     private int id;
     private String type;
     private String name;
