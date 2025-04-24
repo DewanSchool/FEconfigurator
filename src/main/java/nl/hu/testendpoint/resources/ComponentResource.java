@@ -43,6 +43,7 @@ public class ComponentResource {
                 job.add("id", component.getId());
                 job.add("type", component.getType());
                 job.add("name", component.getName());
+                job.add("description", component.getDescription());
                 job.add("price", component.getPrice());
                 jab.add(job);
             }

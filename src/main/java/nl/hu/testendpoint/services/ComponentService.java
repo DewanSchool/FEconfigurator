@@ -41,6 +41,31 @@ public class ComponentService {
 
         return new ComponentService(0, "All Components", components);
     }
+
+    public static ComponentService getTypeComponent() {
+        List<Component> components = new ArrayList<>();
+
+        try (Connection conn = DatabaseConnection.getConnection()) {
+            String sql = "SELECT * FROM product order by productID asc;";
+            try (PreparedStatement statement = conn.prepareStatement(sql);
+                 ResultSet set = statement.executeQuery()) {
+
+                while (set.next()) {
+                    components.add(new Component(
+                            set.getInt("productID"),
+                            set.getString("type"),
+                            set.getString("name"),
+                            set.getString("description"),
+                            set.getDouble("price")
+                    ){});
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return new ComponentService(0, "All Components", components);
+    }
     public int getId() {
         return id;
     }
