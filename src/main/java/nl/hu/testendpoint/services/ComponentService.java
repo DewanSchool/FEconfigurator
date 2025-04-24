@@ -8,12 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ComponentService {
-    private int id;
     private String name;
     private List<Component> components;
 
-    public ComponentService(int id, String name, List<Component> components) {
-        this.id = id;
+    public ComponentService(String name, List<Component> components) {
         this.name = name;
         this.components = components;
     }
@@ -39,14 +37,14 @@ public class ComponentService {
             e.printStackTrace();
         }
 
-        return new ComponentService(0, "All Components", components);
+        return new ComponentService("All Components", components);
     }
 
-    public static ComponentService getTypeComponent() {
+    public static ComponentService getTypeComponent(String tableName) {
         List<Component> components = new ArrayList<>();
 
         try (Connection conn = DatabaseConnection.getConnection()) {
-            String sql = "SELECT * FROM product order by productID asc;";
+            String sql = "select * from product inner join " + tableName+ " on product.productID = " + tableName+ ".productID;";
             try (PreparedStatement statement = conn.prepareStatement(sql);
                  ResultSet set = statement.executeQuery()) {
 
@@ -64,10 +62,7 @@ public class ComponentService {
             e.printStackTrace();
         }
 
-        return new ComponentService(0, "All Components", components);
-    }
-    public int getId() {
-        return id;
+        return new ComponentService("All Components", components);
     }
 
     public String getName() {

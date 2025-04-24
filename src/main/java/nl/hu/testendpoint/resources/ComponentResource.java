@@ -37,8 +37,7 @@ public class ComponentResource {
     public String getSpecificComponents(@PathParam("type") String type) {
         JsonArrayBuilder jab = Json.createArrayBuilder();
 
-        for (Component component : ComponentService.getComponents().getAllComponents()) {
-            if (component.getType().equalsIgnoreCase(type)) {
+        for (Component component : ComponentService.getTypeComponent(type).getAllComponents()) {
                 JsonObjectBuilder job = Json.createObjectBuilder();
                 job.add("id", component.getId());
                 job.add("type", component.getType());
@@ -46,7 +45,6 @@ public class ComponentResource {
                 job.add("description", component.getDescription());
                 job.add("price", component.getPrice());
                 jab.add(job);
-            }
         }
         return jab.build().toString();
     }
