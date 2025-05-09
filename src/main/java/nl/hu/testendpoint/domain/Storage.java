@@ -1,5 +1,7 @@
 package nl.hu.testendpoint.domain;
 
+import java.util.Date;
+
 public class Storage extends Component {
     private String brand;
     private int storagecapacity;
@@ -7,9 +9,9 @@ public class Storage extends Component {
     private int readspeed;
     private int diskspeed;
     private String storagetype;
-    private String releasedate;
+    private Date releasedate;
 
-    public Storage(int id, String name, String description, double price, String brand, int storagecapacity, String storageconnection, int readspeed, int diskspeed, String storagetype, String releasedate) {
+    public Storage(int id, String name, String description, double price, String brand, int storagecapacity, String storageconnection, int readspeed, int diskspeed, String storagetype, Date releasedate) {
         super(id, "storage", name, description, price);
         this.brand = brand;
         this.storagecapacity = storagecapacity;
@@ -30,5 +32,5 @@ public class Storage extends Component {
     public int getReadspeed() { return readspeed; }
     public int getDiskspeed() { return diskspeed; }
     public String getStoragetype() { return storagetype; }
-    public String getReleasedate() { return releasedate; }
+    public Date getReleasedate() { return releasedate; }
 }

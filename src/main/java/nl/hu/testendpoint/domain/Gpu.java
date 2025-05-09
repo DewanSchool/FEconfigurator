@@ -1,5 +1,7 @@
 package nl.hu.testendpoint.domain;
 
+import java.util.Date;
+
 public class Gpu extends Component{
     private String brand;
     private String gpuserie;
@@ -8,9 +10,9 @@ public class Gpu extends Component{
     private int businterface;
     private int gpuclock;
     private int memoryclock;
-    private String releasedate;
+    private Date releasedate;
 
-    public Gpu(int id, String name, String description, double price, String brand, String gpuserie, String gpumodel, int vram, int businterface, int gpuclock, int memoryclock, String releasedate) {
+    public Gpu(int id, String name, String description, double price, String brand, String gpuserie, String gpumodel, int vram, int businterface, int gpuclock, int memoryclock, Date releasedate) {
         super(id, "gpu", name, description, price);
         this.brand = brand;
         this.gpuserie = gpuserie;
@@ -34,6 +36,6 @@ public class Gpu extends Component{
     public int getBusinterface() { return businterface; }
     public int getGpuclock() { return gpuclock; }
     public int getMemoryclock() { return memoryclock; }
-    public String getReleasedate() { return releasedate; }
+    public Date getReleasedate() { return releasedate; }
 
 }

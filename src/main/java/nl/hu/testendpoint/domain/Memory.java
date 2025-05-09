@@ -1,5 +1,7 @@
 package nl.hu.testendpoint.domain;
 
+import java.util.Date;
+
 public class Memory extends Component{
     private String brand;
     private int amount;
@@ -7,9 +9,9 @@ public class Memory extends Component{
     private int memoryspeed;
     private int timing;
     private int ddrversion;
-    private String releasedate;
+    private Date releasedate;
 
-    public Memory(int id, String name, String description, double price, String brand, int amount, int memory, int memoryspeed, int timing, int ddrversion, String releasedate) {
+    public Memory(int id, String name, String description, double price, String brand, int amount, int memory, int memoryspeed, int timing, int ddrversion, Date releasedate) {
         super(id, "memory", name, description, price);
         this.brand = brand;
         this.amount = amount;
@@ -30,6 +32,6 @@ public class Memory extends Component{
     public int getMemoryspeed() { return memoryspeed; }
     public int getTiming() { return timing; }
     public int getDdrversion() { return ddrversion; }
-    public String getReleasedate() { return releasedate; }
+    public Date getReleasedate() { return releasedate; }
 
 }

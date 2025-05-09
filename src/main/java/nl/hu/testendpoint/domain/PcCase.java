@@ -1,5 +1,7 @@
 package nl.hu.testendpoint.domain;
 
+import java.util.Date;
+
 public class PcCase extends Component{
     private int productid;
     private String brand;
@@ -12,9 +14,9 @@ public class PcCase extends Component{
     private int height;
     private int width;
     private int depth;
-    private String releasedate;
+    private Date releasedate;
 
-    public PcCase(int id, String name, String description, double price, String brand, String motherboardformat, int fansbottom, int fansside, int maximumcpucoolerheight, int maximumgpulength, int maximumpsulength, int height, int width, int depth, String releasedate) {
+    public PcCase(int id, String name, String description, double price, String brand, String motherboardformat, int fansbottom, int fansside, int maximumcpucoolerheight, int maximumgpulength, int maximumpsulength, int height, int width, int depth, Date releasedate) {
         super(id, "pcCase", name, description, price);
         this.brand = brand;
         this.motherboardformat = motherboardformat;
@@ -43,5 +45,5 @@ public class PcCase extends Component{
     public int getHeight() { return height; }
     public int getWidth() { return width; }
     public int getDepth() { return depth; }
-    public String getReleasedate() { return releasedate; }
+    public Date getReleasedate() { return releasedate; }
 }

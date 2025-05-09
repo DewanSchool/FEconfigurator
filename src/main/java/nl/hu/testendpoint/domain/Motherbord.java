@@ -1,5 +1,7 @@
 package nl.hu.testendpoint.domain;
 
+import java.util.Date;
+
 public class Motherbord extends Component{
     private String brand;
     private String formfactor;
@@ -13,9 +15,9 @@ public class Motherbord extends Component{
     private int usb2;
     private int usb30gen1;
     private int usb30gen2;
-    private String releasedate;
+    private Date releasedate;
 
-    public Motherbord(int id, String name, String description, double price, String brand, String formfactor, String socket, String chipset, int memoryslots, int maxmemory, int ddrversion, String wifi, int m2slots, int usb2, int usb30gen1, int usb30gen2, String releasedate) {
+    public Motherbord(int id, String name, String description, double price, String brand, String formfactor, String socket, String chipset, int memoryslots, int maxmemory, int ddrversion, String wifi, int m2slots, int usb2, int usb30gen1, int usb30gen2, Date releasedate) {
         super(id, "motherbord", name, description, price);
         this.brand = brand;
         this.formfactor = formfactor;
@@ -49,5 +51,5 @@ public class Motherbord extends Component{
     public int getUsb2() { return usb2; }
     public int getUsb30gen1() { return usb30gen1; }
     public int getUsb30gen2() { return usb30gen2; }
-    public String getReleasedate() { return releasedate; }
+    public Date getReleasedate() { return releasedate; }
 }

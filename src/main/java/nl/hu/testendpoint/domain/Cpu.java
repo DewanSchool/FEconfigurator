@@ -1,5 +1,7 @@
 package nl.hu.testendpoint.domain;
 
+import java.util.Date;
+
 public class Cpu extends Component {
     private String brand;
     private String processorserie;
@@ -9,9 +11,9 @@ public class Cpu extends Component {
     private int cores;
     private String integradedgraphics;
     private int tdp;
-    private String releasedate;
+    private Date releasedate;
 
-    public Cpu(int id, String name, String description, double price, String brand, String processorserie, String processormodel, String socket, int clockspeed, int cores, String integradedgraphics, int tdp, String releasedate) {
+    public Cpu(int id, String name, String description, double price, String brand, String processorserie, String processormodel, String socket, int clockspeed, int cores, String integradedgraphics, int tdp, Date releasedate) {
         super(id, "cpu", name, description, price);
         this.brand = brand;
         this.processorserie = processorserie;
@@ -36,6 +38,6 @@ public class Cpu extends Component {
     public int getCores() { return cores; }
     public String getIntegradedgraphics() { return integradedgraphics; }
     public int getTdp() { return tdp; }
-    public String getReleasedate() { return releasedate; }
+    public Date getReleasedate() { return releasedate; }
 
 }

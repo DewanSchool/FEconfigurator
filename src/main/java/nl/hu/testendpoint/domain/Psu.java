@@ -1,13 +1,15 @@
 package nl.hu.testendpoint.domain;
 
+import java.util.Date;
+
 public class Psu extends Component {
     private String brand;
     private int power;
     private String certificate80plus;
-    private String releasedate;
+    private Date releasedate;
 
 
-    public Psu(int id, String name, String description, double price, String brand, int power, String certificate80plus, String releasedate) {
+    public Psu(int id, String name, String description, double price, String brand, int power, String certificate80plus, Date releasedate) {
         super(id, "psu", name, description, price);
         this.brand = brand;
         this.power = power;
@@ -23,5 +25,5 @@ public class Psu extends Component {
     public String getBrand() { return brand; }
     public int getPower() { return power; }
     public String getCertificate80plus() { return certificate80plus; }
-    public String getReleasedate() { return releasedate; }
+    public Date getReleasedate() { return releasedate; }
 }

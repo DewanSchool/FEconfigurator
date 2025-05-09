@@ -10,9 +10,10 @@ import jakarta.ws.rs.Produces;
 import nl.hu.testendpoint.domain.Component;
 import nl.hu.testendpoint.services.ConfiguratorService;
 
+@Path("/configurator")
 public class ConfiguratorResource {
     @GET
-    @Path("/configurator/{name}")
+    @Path("/{name}")
     @Produces("application/json")
     public String getConfiguration(@PathParam("name") String name) {
         JsonArrayBuilder jab = Json.createArrayBuilder();

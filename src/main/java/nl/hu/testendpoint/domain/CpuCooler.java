@@ -1,14 +1,16 @@
 package nl.hu.testendpoint.domain;
 
+import java.util.Date;
+
 public class CpuCooler extends Component {
     private String brand;
     private String sockets;
     private int sizemm;
     private int heightmm;
     private int sounddb;
-    private String releasedate;
+    private Date releasedate;
 
-    public CpuCooler(int id, String name, String description, double price, String brand, String sockets, int sizemm, int heightmm, int sounddb, String releasedate) {
+    public CpuCooler(int id, String name, String description, double price, String brand, String sockets, int sizemm, int heightmm, int sounddb, Date releasedate) {
         super(id, "cpuCooler", name, description, price);
         this.brand = brand;
         this.sockets = sockets;
@@ -27,5 +29,5 @@ public class CpuCooler extends Component {
     public int getSizemm() { return sizemm; }
     public int getHeightmm() { return heightmm; }
     public int getSounddb() { return sounddb; }
-    public String getReleasedate() { return releasedate; }
+    public Date getReleasedate() { return releasedate; }
 }
